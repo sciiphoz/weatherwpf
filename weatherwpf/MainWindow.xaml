@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:weatherwpf"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="550" Width="1000">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -26,13 +26,61 @@
             </ListView.View>
         </ListView>
 
+        <Label Content="Summary" Grid.Row="1"/>
+
+        <WrapPanel Grid.Row="1" Margin="0,17,363,173">
+            <Label Content="Средняя температура"/>
+            <TextBlock x:Name="tempSum" Width="100"></TextBlock>
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="1" Margin="142,17,185,173">
+            <Label Content="Максимальная температура" />
+            <TextBlock x:Name="sumMax" Width="100"></TextBlock>
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="1" Margin="0,99,289,91">
+            <Label Content="Максимальное кол-во повторений" />
+            <TextBlock x:Name="numOfEquals" Width="211" Height="28"></TextBlock>
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="1" Margin="330,94,0,105">
+            <Label Content="Аномальное потепление" />
+            <TextBlock x:Name="anomPlus" Width="170" Height="42"></TextBlock>
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="1" Margin="330,176,0,23">
+            <Label Content="Аномальное похолодание" />
+            <TextBlock x:Name="anomMinus" Width="170" Height="55"></TextBlock>
+        </WrapPanel>
+
+        <WrapPanel Grid.Row="1" Margin="330,17,0,173">
+            <Label Content="Минимальная температура"/>
+            <TextBlock x:Name="sumMin" Width="100"/>
+        </WrapPanel>
+
         <WrapPanel Grid.Column="1" Grid.Row="0" Margin="10,6,0,6" HorizontalAlignment="Left">
             <Label Content="Filter:"/>
-            <ComboBox Width="125" x:Name="FilterCB" DisplayMemberPath="Title" Cursor="Hand"></ComboBox>
+            <ComboBox Width="125" x:Name="FilterCB" DisplayMemberPath="Title" Cursor="Hand" SelectionChanged="FilterCB_SelectionChanged"></ComboBox>
         </WrapPanel>
         <WrapPanel Grid.Column="1" Grid.Row="0" Margin="200,6,0,6" HorizontalAlignment="Left">
             <Label Content="Sort:"/>
-            <ComboBox Width="125" x:Name="SortCB" Cursor="Hand" DisplayMemberPath="SortTitle" ></ComboBox>
+            <ComboBox Width="125" x:Name="SortCB" Cursor="Hand" DisplayMemberPath="SortTitle" SelectionChanged="SortCB_SelectionChanged" ></ComboBox>
         </WrapPanel>
+        <WrapPanel Grid.Column="1" Margin="196,13,76,138" Grid.Row="1">
+            <Label Content="Temperature"/>
+            <TextBox x:Name="TempAddValue" Text="0" Width="113" Height="25"/>
+        </WrapPanel>
+        <WrapPanel Grid.Column="1" Margin="16,13,276,138" Grid.Row="1">
+            <Label Content="Date"/>
+            <TextBox x:Name="DateAddValue" Text="01.01.2001" Width="113" Height="25"/>
+        </WrapPanel>
+        <WrapPanel Grid.Row="1" Grid.Column="1" Margin="230,49,46,173">
+            <Label Content="Status"/>
+            <ComboBox x:Name="StatusAddCB" Width="113" Height="25" DisplayMemberPath="Title"/>
+        </WrapPanel>
+
+        <Button x:Name="Reset" Grid.Row="1" Margin="10,224,368,10" Click="ResetSumBTN_Click">Reset summary</Button>
+
+        <Button x:Name="Add" Grid.Column="1" Grid.Row="1" Margin="266,134,112,100" Click="AddDayBTN_Click">Add info</Button>
     </Grid>
 </Window>

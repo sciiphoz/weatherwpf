@@ -28,12 +28,12 @@ namespace weatherwpf.Data
 
         public static List<Weather> Days = new List<Weather>()
         {
-            new Weather(new DateTime(2020, 5, 15), +14, Statuses[0]),
-            new Weather(new DateTime(2020, 5, 16), -2, Statuses[2]),
-            new Weather(new DateTime(2020, 5, 17), +24, Statuses[1]),
-            new Weather(new DateTime(2020, 5, 18), +14, Statuses[1]),
-            new Weather(new DateTime(2020, 5, 19), +12, Statuses[0]),
-            new Weather(new DateTime(2020, 5, 20), +14, Statuses[2])
+            new Weather("15.05.2022", +14, Statuses[0]),
+            new Weather("16.05.2022", -2, Statuses[2]),
+            new Weather("17.05.2022", +24, Statuses[1]),
+            new Weather("18.05.2022", +14, Statuses[1]),
+            new Weather("19.05.2022", +12, Statuses[0]),
+            new Weather("20.05.2022", +14, Statuses[2])
         };
     }
 }

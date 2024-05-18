@@ -8,7 +8,7 @@ namespace weatherwpf.Data
 {
     public class Weather
     {
-        public Weather(DateTime date, int temp, WeatherStatus status) 
+        public Weather(string date, int temp, WeatherStatus status) 
         {
             ID = Guid.NewGuid().ToString();
             dateTime = date;
@@ -16,7 +16,7 @@ namespace weatherwpf.Data
             weatherStatus = status;
         }
         public string ID { get; set; }
-        public DateTime dateTime { get; set; }
+        public string dateTime { get; set; }
         public int Temp { get; set; }
 
         public WeatherStatus? weatherStatus { get; set; }
